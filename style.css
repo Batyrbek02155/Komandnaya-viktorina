@@ -1,0 +1,250 @@
+:root{
+  --bg:#f7f9fc;
+  --card:#ffffff;
+  --primary:#4f46e5;
+  --secondary:#22c55e;
+  --accent:#facc15;
+  --danger:#ef4444;
+  --text:#111827;
+  --muted:#e5e7eb;
+  --grad:linear-gradient(135deg,#b70dbd,#22c5c5);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',Arial;
+  background: #cfdcee;
+  color:var(--text);
+  text-align:center;
+}
+
+h1{
+  margin:20px 10px;
+  font-size:clamp(26px,5vw,40px);
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hidden{display:none!important}
+
+button,input{
+  padding:14px;
+  border:none;
+  border-radius:18px;
+  font-size:16px;
+}
+
+input{
+  width:min(320px,90%);
+  background:white;
+  color:var(--text);
+  border:2px solid var(--primary);
+}
+
+button{
+  cursor:pointer;
+  background:var(--grad);
+  color:white;
+  font-weight:800;
+  transition:.25s;
+}
+button:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+button:active{transform:scale(.95)}
+
+.screen{padding:20px}
+
+/* SUBJECTS */
+.subjects{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+.subject{
+  width:190px;
+  height:120px;
+  border-radius:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:18px;
+  background:var(--grad);
+  color:white;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+  transition:.3s;
+}
+.subject:hover{
+  transform:translateY(-6px) scale(1.05);
+}
+
+/* GAME */
+.game{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.team{
+  width:min(420px,95%);
+  background:var(--card);
+  border-radius:32px;
+  box-shadow:0 20px 40px rgba(0,0,0,.2);
+  animation:pop .5s ease;
+}
+
+.team-header{
+  padding:18px;
+  font-size:22px;
+  font-weight:900;
+  background:var(--grad);
+  color:white;
+  border-radius:32px 32px 0 0;
+}
+
+.level{
+  height:16px;
+  background:var(--muted);
+  margin:16px;
+  border-radius:16px;
+  overflow:hidden;
+}
+.level span{
+  display:block;
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--secondary),var(--accent));
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+
+.question{
+  padding:16px 20px;
+  font-size:18px;
+  animation:fadeUp .4s ease;
+}
+
+.options{
+  padding:16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.options button{
+  background:#f9fafb;
+  color:var(--text);
+  border:2px solid var(--primary);
+}
+
+/* ANSWERS */
+.correct{
+  background:var(--secondary)!important;
+  color:white!important;
+  animation:flash .6s ease;
+}
+.wrong{
+  background:var(--danger)!important;
+  color:white!important;
+  animation:shake .4s ease;
+}
+
+/* WIN */
+.win{
+  position:fixed;
+  inset:0;
+  background:rgba(17,24,39,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:10;
+}
+.win-card{
+  background:var(--grad);
+  padding:50px;
+  border-radius:40px;
+  font-size:clamp(24px,6vw,36px);
+  font-weight:900;
+  color:white;
+  box-shadow:0 40px 80px rgba(0,0,0,.4);
+  animation:winPop .6s ease, bounce 1.4s infinite;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-6px)}
+  50%{transform:translateX(6px)}
+  75%{transform:translateX(-4px)}
+  100%{transform:translateX(0)}
+}
+@keyframes pop{
+  from{opacity:0;transform:scale(.6)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes flash{
+  0%{box-shadow:0 0 0 rgba(34,197,94,0)}
+  50%{box-shadow:0 0 30px rgba(34,197,94,1)}
+  100%{box-shadow:0 0 0 rgba(34,197,94,0)}
+}
+@keyframes winPop{
+  from{opacity:0;transform:scale(.6)}
+  to{opacity:1;transform:scale(1)}
+}
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  .options{grid-template-columns:1fr}
+  .subject{width:150px;height:100px}
+}
+
+
+
+/* ===== APPLY ===== */
+
+.question{
+  animation:fadeUp .4s ease;
+}
+
+.options button{
+  transition:.25s;
+}
+.options button:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.correct{
+  animation:glow .6s ease;
+}
+
+.wrong{
+  animation:shake .4s ease;
+}
+
+.level span{
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+}
+
+.win{
+  animation:fadeUp .4s ease;
+}
+
+.win-card{
+  animation:winPop .6s ease, pulse 1.4s infinite ease-in-out;
+}
