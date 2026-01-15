@@ -208,7 +208,7 @@ button:active{transform:scale(.95)}
 }
 
 /* MOBILE */
-@media(max-width:700px){
+@media(max-width:300px){
   .options{grid-template-columns:1fr}
   .subject{width:150px;height:100px}
 }
@@ -216,7 +216,7 @@ button:active{transform:scale(.95)}
 
 
 /* ===== APPLY ===== */
-@media (max-width: 700px){
+@media (max-width: 300px){
 
   body{
     font-size:18px;
@@ -305,3 +305,4 @@ button:active{transform:scale(.95)}
     border-radius:30px;
   }
 }
+
