@@ -216,35 +216,92 @@ button:active{transform:scale(.95)}
 
 
 /* ===== APPLY ===== */
+@media (max-width: 700px){
 
-.question{
-  animation:fadeUp .4s ease;
-}
+  body{
+    font-size:18px;
+  }
 
-.options button{
-  transition:.25s;
-}
-.options button:hover{
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
-}
+  h1{
+    font-size:28px;
+    margin:16px 8px;
+  }
 
-.correct{
-  animation:glow .6s ease;
-}
+  .screen{
+    padding:14px;
+  }
 
-.wrong{
-  animation:shake .4s ease;
-}
+  /* SUBJECTS */
+  .subjects{
+    gap:14px;
+  }
 
-.level span{
-  transition:width .5s cubic-bezier(.4,0,.2,1);
-}
+  .subject{
+    width:100%;
+    max-width:340px;
+    height:110px;
+    font-size:20px;
+    border-radius:24px;
+  }
 
-.win{
-  animation:fadeUp .4s ease;
-}
+  /* GAME */
+  .game{
+    gap:18px;
+  }
 
-.win-card{
-  animation:winPop .6s ease, pulse 1.4s infinite ease-in-out;
+  .team{
+    width:100%;
+    border-radius:26px;
+  }
+
+  .team-header{
+    font-size:20px;
+    padding:16px;
+  }
+
+  .question{
+    font-size:20px;
+    padding:18px 16px;
+  }
+
+  /* OPTIONS */
+  .options{
+    grid-template-columns:1fr;
+    gap:14px;
+    padding:14px;
+  }
+
+  .options button{
+    font-size:18px;
+    padding:16px;
+    border-radius:20px;
+  }
+
+  /* INPUTS & BUTTONS */
+  input{
+    width:100%;
+    font-size:18px;
+    padding:16px;
+    border-radius:18px;
+  }
+
+  button{
+    font-size:18px;
+    padding:16px;
+    border-radius:20px;
+  }
+
+  /* LEVEL BAR */
+  .level{
+    height:18px;
+    margin:14px;
+  }
+
+  /* WIN SCREEN */
+  .win-card{
+    width:90%;
+    padding:30px;
+    font-size:26px;
+    border-radius:30px;
+  }
 }
