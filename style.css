@@ -216,93 +216,60 @@ button:active{transform:scale(.95)}
 
 
 /* ===== APPLY ===== */
-@media (max-width: 300px){
+/* Мобильный стиль (до 768px) */
+@media (max-width: 768px) {
 
-  body{
-    font-size:18px;
+  body {
+    font-size: 18px;
+    padding: 0 10px;
   }
 
-  h1{
-    font-size:28px;
-    margin:16px 8px;
+  h1 {
+    font-size: 28px;
+    margin: 16px 0;
   }
 
-  .screen{
-    padding:14px;
+  .subjects {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
   }
 
-  /* SUBJECTS */
-  .subjects{
-    gap:14px;
+  .subject {
+    width: 100%;
+    max-width: 100%;
+    height: 110px;
+    font-size: 20px;
+    border-radius: 20px;
   }
 
-  .subject{
-    width:100%;
-    max-width:340px;
-    height:110px;
-    font-size:20px;
-    border-radius:24px;
+  button, input {
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 20px;
   }
 
-  /* GAME */
-  .game{
-    gap:18px;
+  .options {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0;
   }
 
-  .team{
-    width:100%;
-    border-radius:26px;
+  .question {
+    font-size: 20px;
+    padding: 18px;
   }
 
-  .team-header{
-    font-size:20px;
-    padding:16px;
+  .team {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
   }
 
-  .question{
-    font-size:20px;
-    padding:18px 16px;
+  .win-card {
+    width: 90%;
+    font-size: 26px;
+    padding: 24px;
   }
 
-  /* OPTIONS */
-  .options{
-    grid-template-columns:1fr;
-    gap:14px;
-    padding:14px;
-  }
-
-  .options button{
-    font-size:18px;
-    padding:16px;
-    border-radius:20px;
-  }
-
-  /* INPUTS & BUTTONS */
-  input{
-    width:100%;
-    font-size:18px;
-    padding:16px;
-    border-radius:18px;
-  }
-
-  button{
-    font-size:18px;
-    padding:16px;
-    border-radius:20px;
-  }
-
-  /* LEVEL BAR */
-  .level{
-    height:18px;
-    margin:14px;
-  }
-
-  /* WIN SCREEN */
-  .win-card{
-    width:90%;
-    padding:30px;
-    font-size:26px;
-    border-radius:30px;
-  }
 }
-
