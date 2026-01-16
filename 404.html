@@ -2,151 +2,104 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>404 — Страница не найдена</title>
+  <title>404 — Мем не найден</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root {
-      --bg: #f7f9fc;
-      --primary: #4f46e5;
-      --secondary: #22c55e;
-      --text: #1f2937;
-      --muted: #6b7280;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       height: 100vh;
+      font-family: Arial, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #eef2ff, var(--bg));
-      color: var(--text);
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
       overflow: hidden;
     }
 
-    .container {
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
       text-align: center;
-      padding: 20px;
-      animation: fadeIn 1s ease;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      animation: pop 0.6s ease;
+      max-width: 420px;
+      width: 90%;
     }
 
-    .code {
-      font-size: clamp(96px, 20vw, 160px);
-      font-weight: 800;
-      color: var(--primary);
-      position: relative;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    .code::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 10px;
-      background: rgba(0,0,0,0.1);
-      filter: blur(10px);
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      animation: shake 1.5s infinite;
     }
 
     h1 {
+      font-size: 64px;
       margin: 10px 0;
-      font-size: 28px;
+      color: #ef4444;
     }
 
     p {
-      max-width: 420px;
-      margin: 0 auto;
-      color: var(--muted);
       font-size: 16px;
+      color: #374151;
     }
 
-    .actions {
-      margin-top: 30px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    a {
-      text-decoration: none;
-      padding: 12px 24px;
+    button {
+      margin-top: 20px;
+      padding: 12px 22px;
+      border: none;
       border-radius: 12px;
-      font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .home {
-      background: var(--primary);
+      background: #4f46e5;
       color: white;
-      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+      font-size: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .home:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.45);
-    }
-
-    .reload {
-      background: white;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-
-    .reload:hover {
-      transform: translateY(-3px);
-      background: #eef2ff;
+    button:hover {
+      transform: scale(1.05);
     }
 
     /* Анимации */
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
+    @keyframes shake {
+      0%, 100% { transform: rotate(0); }
+      25% { transform: rotate(-2deg); }
+      75% { transform: rotate(2deg); }
     }
 
-    @keyframes fadeIn {
+    @keyframes pop {
       from {
+        transform: scale(0.8);
         opacity: 0;
-        transform: translateY(20px);
       }
       to {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0);
       }
     }
 
-    /* Адаптация под телефон */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 15px;
-      }
+    /* Мемные надписи */
+    .meme-text {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="code">404</div>
-    <h1>Страница не найдена</h1>
-    <p>
-      Похоже, такой страницы не существует или она была удалена.
-    </p>
+  <div class="box">
+    <!-- МЕМ КАРТИНКА -->
+    <img src="https://i.imgflip.com/65efzo.jpg" alt="мем 404">
 
-    <div class="actions">
-      <a href="/" class="home">На главную</a>
-      <a href="javascript:location.reload()" class="reload">Обновить</a>
-    </div>
+    <div class="meme-text">Когда хотел зайти на страницу, но она:</div>
+    <h1>404</h1>
+
+    <p>Эта страница ушла за хлебом и не вернулась 🥲</p>
+
+    <button onclick="location.href='/'">Вернуться на главную</button>
   </div>
 
 </body>
