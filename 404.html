@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — Страница не найдена</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --primary: #4f46e5;
+      --secondary: #22c55e;
+      --text: #1f2937;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #eef2ff, var(--bg));
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .code {
+      font-size: clamp(96px, 20vw, 160px);
+      font-weight: 800;
+      color: var(--primary);
+      position: relative;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .code::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 10px;
+      background: rgba(0,0,0,0.1);
+      filter: blur(10px);
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 28px;
+    }
+
+    p {
+      max-width: 420px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .home {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.35);
+    }
+
+    .home:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(79, 70, 229, 0.45);
+    }
+
+    .reload {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .reload:hover {
+      transform: translateY(-3px);
+      background: #eef2ff;
+    }
+
+    /* Анимации */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Адаптация под телефон */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="code">404</div>
+    <h1>Страница не найдена</h1>
+    <p>
+      Похоже, такой страницы не существует или она была удалена.
+    </p>
+
+    <div class="actions">
+      <a href="/" class="home">На главную</a>
+      <a href="javascript:location.reload()" class="reload">Обновить</a>
+    </div>
+  </div>
+
+</body>
+</html>
